@@ -34,14 +34,10 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """get page
         """
-        You have to use this CSV file (same as the one presented at the top of the project)
-        Use assert to verify that both arguments are integers greater than 0.
-        Use index_range to find the correct indexes to paginate the dataset correctly and return the appropriate page of the dataset (i.e. the correct list of rows).
-        If the input arguments are out of range for the dataset, an empty list should be returned.
-        """
-        assert isinstance(page, int) and page > 0, "Page must be an integer greater than 0"
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be an integer greater than 0"
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start_index, end_index = index_range(page, page_size)
         dataset = self.dataset()
         return dataset[start_index:end_index]
