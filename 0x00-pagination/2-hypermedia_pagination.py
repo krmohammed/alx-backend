@@ -42,6 +42,7 @@ class Server:
         return dataset[start_index:end_index]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """get page with hypermedia"""
         dataset_got = self.get_page(page, page_size)
         if page_size > 0:
             total_pages = math.ceil(len(self.dataset()) / page_size)
