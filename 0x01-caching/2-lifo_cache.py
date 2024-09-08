@@ -15,6 +15,8 @@ class LIFOCache(BaseCaching):
             key (str): the unique identifier for the item
             item (any): the item to store
         """
+        if key is None or item is None:
+            return
         if len(self.cache_data) >= self.MAX_ITEMS:
             k, v = self.cache_data.popitem()
             print("DISCARD: {}".format(k))
