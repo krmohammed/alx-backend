@@ -1,7 +1,6 @@
 #!/usr/bin/evn python3
 """provides the class, BasicCache"""
-from basic_caching import BaseCaching
-
+BaseCaching = __import__('basic_caching').BaseCaching
 
 class BasicCache(BaseCaching):
     """A simple key-value cache with a fixed maximum size."""
