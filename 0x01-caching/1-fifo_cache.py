@@ -17,7 +17,8 @@ class FIFOCache(BaseCaching):
         """
         if key is None or item is None:
             return
-        if key not in self.cache_data and len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+        if key not in self.cache_data and \
+            len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             oldest = self.order.pop(0)
             self.cache_data.pop(oldest)
             print(f"DISCARD: {oldest}")
