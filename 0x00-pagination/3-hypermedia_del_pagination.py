@@ -30,7 +30,7 @@ class Server:
         """Dataset indexed by sorting position, starting at 0"""
         if self.__indexed_dataset is None:
             data = self.dataset()
-            truncated_dataset = dataset[:1000]
+            truncated_dataset = data[:1000]
             self.__indexed_dataset = {i: data[i] for i in range(len(data))}
         return self.__indexed_dataset
 
