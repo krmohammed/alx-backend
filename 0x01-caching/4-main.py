@@ -1,5 +1,5 @@
+#!/usr/bin/python3
 """ 4-main """
-
 MRUCache = __import__("4-mru_cache").MRUCache
 
 my_cache = MRUCache()

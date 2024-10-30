@@ -19,7 +19,7 @@ class MRUCache(BaseCaching):
             return
         size = len(self.cache_data)
         if key not in self.cache_data and size >= BaseCaching.MAX_ITEMS:
-            recent = self.order.pop(-1)
+            recent = self.order.pop(0)
             self.cache_data.pop(recent)
             print(f"DISCARD: {recent}")
         self.cache_data[key] = item
